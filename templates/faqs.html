@@ -2,8 +2,34 @@
 
 {% block title %} Faqs {% endblock %}
 {% block Activate2 %} active {% endblock %}
+
 {% block body %}
-    <h1>Hi This is FAQs</h1>
+
+<div class="container mb-5">
+    <div class="accordion my-5" id="accordionExample">
+        {% for q in question %}
+        <div class="container mb-3">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ q.id }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ q.id }}" aria-expanded="false" aria-controls="#collapse{{ q.id }}">
+                    {{ q.question }}
+                    </button>
+                </h2>
+                <div id="collapse{{ q.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ q.id }}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    <strong>{{ q.answer }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="container-fluid my-5">
+
+</div>
+
+
+
 {% endblock %}
 
 
