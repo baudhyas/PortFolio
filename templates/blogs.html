@@ -7,87 +7,16 @@
 
 <main class="container my-4">
     <div class="row">
+        {% for b in blogs %}
         <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
+                <h5 class="card-title">{{ b.title }}</h5>
+                <p class="card-text">{{ b.text }}</p>
+                <a href="#" class="btn btn-primary">Read</a>
             </div>
         </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-        
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-    
-        <div class="card col-lg-4 my-2 mx-3" style="width: 25em;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog title</h5>
-                <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <a href="#" class="btn btn-primary">Open</a>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </main>
 
