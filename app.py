@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, flash
+from flask import Flask, render_template
 
 app = Flask(__name__ ,static_url_path='/static')
 app.secret_key = "adkviergbieriw8r5y25y025gtreiuugbfdhgb8r7505702rebgwhg"
@@ -16,10 +16,6 @@ class Blog:
 		self.id = id
 
 @app.route("/")
-def index():
-	return render_template('index.html')
-
-
 @app.route("/blogs")
 @app.route("/blogs/<int:id_>")
 def blogs(id_=None):
@@ -41,12 +37,3 @@ def fags():
 	for i in range(15):
 		all_quest.append(Question("Question " + str(i), "Answer" + str(i), i))
 	return render_template("faqs.html", question=all_quest)
-
-@app.route("/login", methods = ['GET', 'POST'])
-def login():
-	if request.method == 'POST':
-		userId = request.form['email']
-		password = request.form['password']
-		if userId and password:
-			return render_template("dashboard.html")
-	return render_template("login.html")
