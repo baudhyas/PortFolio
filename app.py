@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, flash
 
-app = Flask(__name__)
+app = Flask(__name__ ,static_url_path='/static')
+app.secret_key = "adkviergbieriw8r5y25y025gtreiuugbfdhgb8r7505702rebgwhg"
 
 class Question:
 	def __init__(self, question, answer, id):
@@ -20,11 +21,16 @@ def index():
 
 
 @app.route("/blogs")
-def blogs():
+@app.route("/blogs/<int:id_>")
+def blogs(id_=None):
+
+	if id_ is not None:
+		return render_template('blog.html', data=id_)
+
 	all_blogs = []
 
 	for i in range(10):
-		all_blogs.append(Blog(f"Blog Title {i} ", "Blog Text", id))
+		all_blogs.append(Blog(f"Blog Title {i} ", "Blog small Introduction Text ...", i))
 
 	return render_template('blogs.html', blogs=all_blogs)
 
@@ -33,9 +39,14 @@ def blogs():
 def fags():
 	all_quest = []
 	for i in range(15):
-		all_quest.append(Question("Question" + str(i), "Answer" + str(i), i))
+		all_quest.append(Question("Question " + str(i), "Answer" + str(i), i))
 	return render_template("faqs.html", question=all_quest)
 
-@app.route("/login")
+@app.route("/login", methods = ['GET', 'POST'])
 def login():
+	if request.method == 'POST':
+		userId = request.form['email']
+		password = request.form['password']
+		if userId and password:
+			return render_template("dashboard.html")
 	return render_template("login.html")
